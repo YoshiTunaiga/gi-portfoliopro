@@ -1,0 +1,116 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  color: #ffffff;
+}
+.header-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 70%;
+  color: #ffffff;
+}
+.header-logo {
+  font-size: 50px;
+  font-family: "Poppins ExtraBold";
+  color: #ffffff;
+  margin-top: 10px;
+  /* margin-right: 10px; */
+
+  background-image: url("https://user-images.githubusercontent.com/85481752/160311379-e899c6b6-ad1c-4147-a327-a3a92c5c2c32.png");
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  border-radius: 40px;
+}
+.header-options {
+  display: flex;
+  align-items: center;
+}
+.header-option {
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.header-hamburger {
+  display: none;
+  color: #ffffff;
+}
+.header-option-seperator {
+  margin: 0 50px 0 0;
+  color: #ffffff;
+}
+.selected-header-option {
+  color: var(--dark-orange);
+}
+
+/*IPAD PRO RESPONSIVENESS*/
+@media only screen and (max-width: 1110px) {
+  .header-parent {
+    width: 80%;
+  }
+
+  .header-logo {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .header-hamburger {
+    display: block;
+  }
+  .header-parent {
+    width: 100%;
+    padding: 0 40px;
+    position: relative;
+  }
+  .header-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -100%;
+    transition: all 0.8s ease-out;
+    top: 0px;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #1f2235;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+  .header-option-seperator {
+    margin: 0;
+  }
+  .selected-header-option {
+    color: #ffffff;
+  }
+  .header-hamburger-bars {
+    font-size: 36px;
+    cursor: pointer;
+    margin: 0px 10px;
+    color: #ffffff;
+  }
+  .show-hamburger-options {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .header-logo {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .header-logo {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 1121px) {
+  .header-logo {
+    font-size: 40px;
+  }
+}
