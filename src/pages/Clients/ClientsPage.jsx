@@ -11,7 +11,7 @@ const ClientsPage = ({ id = "" }) => {
         color: "#FFFFFF",
         // border: "1px solid red",
         backgroundColor: "#302E2E",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
       }}>
       <div
         style={{
@@ -19,9 +19,15 @@ const ClientsPage = ({ id = "" }) => {
           flexDirection: "column",
           gap: 20,
           textAlign: "center",
+          color: "#C7A03B",
+          fontFamily: "Times New Roman",
+          fontSize: "34px",
+          padding: 0,
+          margin: 0,
+          lineHeight: 1,
           border: "1px solid yellow",
         }}>
-        Clients
+        CLIENTS
       </div>
       <div
         style={{
@@ -29,9 +35,15 @@ const ClientsPage = ({ id = "" }) => {
           flexDirection: "column",
           gap: 20,
           textAlign: "center",
+          color: "#C7A03B",
+          fontFamily: "Times New Roman",
+          fontSize: "34px",
+          padding: 0,
+          margin: 0,
+          lineHeight: 1,
           border: "1px solid olive",
         }}>
-        Testimonials
+        TESTIMONIALS
       </div>
     </div>
   );
