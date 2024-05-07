@@ -2,7 +2,7 @@ import AboutMePage from "../pages/AboutMe/AboutMePage";
 import ClientsPage from "../pages/Clients/ClientsPage";
 import ContactMePage from "../pages/ContactMe/ContactMePage";
 import HomePage from "../pages/HomePage/HomePage";
-import ResumePage from "../pages/Resume/ResumePage";
+// import ResumePage from "../pages/Resume/ResumePage";
 
 // Component Rendering: Screens for SPA
 export const TOTAL_SCREENS = [
@@ -15,13 +15,13 @@ export const TOTAL_SCREENS = [
     component: AboutMePage,
   },
   {
-    screen_name: "Client",
+    screen_name: "Clients",
     component: ClientsPage,
   },
-  {
-    screen_name: "Resume",
-    component: ResumePage,
-  },
+  // {
+  //   screen_name: "Resume",
+  //   component: ResumePage,
+  // },
   {
     screen_name: "Contact",
     component: ContactMePage,

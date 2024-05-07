@@ -1,50 +1,22 @@
 import PropTypes from "prop-types";
 import aboutMeImg from "../../assets/profile3.png";
+import {
+  StyledAboutMeContainer,
+  StyledImageContainer,
+  StyledPrimaryHeader,
+  StyledSecondaryHeader,
+  StyledTextContainer,
+  StyledHeaderContainer,
+} from "./styles";
 
 const AboutMePage = ({ id = "" }) => {
   return (
-    <div
-      id={id}
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        height: "100vh",
-        color: "#FFFFFF",
-        backgroundColor: "#000000",
-        justifyContent: "space-evenly",
-        gap: 100,
-        padding: "100px 20px 10px 160px",
-        // border: "1px solid red",
-      }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-        }}>
-        <div>
-          <p
-            style={{
-              color: "#C7A03B",
-              fontFamily: "Times New Roman",
-              fontSize: "34px",
-              padding: 0,
-              margin: 0,
-              lineHeight: 1,
-            }}>
-            ABOUT ME
-          </p>
-          <p
-            style={{
-              fontFamily: "Arial Narrow",
-              fontSize: "54px",
-              padding: 0,
-              margin: 0,
-              lineHeight: 1,
-            }}>
-            Get To Know Me
-          </p>
-        </div>
+    <StyledAboutMeContainer id={id}>
+      <StyledTextContainer>
+        <StyledHeaderContainer>
+          <StyledPrimaryHeader>ABOUT ME</StyledPrimaryHeader>
+          <StyledSecondaryHeader>Get To Know Me</StyledSecondaryHeader>
+        </StyledHeaderContainer>
         <div
           style={{
             display: "flex",
@@ -76,11 +48,11 @@ const AboutMePage = ({ id = "" }) => {
           dynamic field.`}
           </p>
         </div>
-      </div>
-      <div>
-        <img src={aboutMeImg} alt="aboutme" width={450} />
-      </div>
-    </div>
+      </StyledTextContainer>
+      <StyledImageContainer>
+        <img src={aboutMeImg} alt="aboutme" width={454} />
+      </StyledImageContainer>
+    </StyledAboutMeContainer>
   );
 };
 

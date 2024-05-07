@@ -1,18 +1,3 @@
-// const programmingSkillsDetails = [
-//   { skill: "JavaScript", ratingPercentage: 80 },
-//   { skill: "React JS", ratingPercentage: 80 },
-//   { skill: "React Native", ratingPercentage: 80 },
-//   { skill: "Express JS", ratingPercentage: 80 },
-//   { skill: "Node/Express", ratingPercentage: 80 },
-//   { skill: "Firebase", ratingPercentage: 40 },
-//   { skill: "TypeScript", ratingPercentage: 50 },
-//   { skill: "Redux", ratingPercentage: 80 },
-//   { skill: "Postgres/Sequelize", ratingPercentage: 80 },
-//   { skill: "Python", ratingPercentage: 30 },
-//   { skill: "Bubble.io", ratingPercentage: 70 },
-//   { skill: "HTML5/CSS3", ratingPercentage: 85 },
-// ];
-
 export const professionalExperienceDetails = [
   {
     company: "Astrana Health (former ApolloMed)",
@@ -37,13 +22,67 @@ export const professionalExperienceDetails = [
   },
 ];
 
+export const educationalHistoryDetails = [
+  {
+    company: "Fullstack Academy",
+    course: "Software Engineering",
+    courseDate: "2021-12-01",
+    content: `The Grace Hopper Program: Online Software Engineering Immersive`,
+  },
+  {
+    company: "Stanford University",
+    course: "Code In Place: Python",
+    courseDate: "2021-05-01",
+    content: `CS106A: Online Programming Course for Python Fundamentals`,
+  },
+];
+
+export const licensesCertifications = [
+  {
+    company: "MongoDB",
+    name: "MongoDB Node.JS Developer Path",
+    year: 2023,
+  },
+  {
+    company: "FreeCodeCamp",
+    name: "Responsive Web Design",
+    year: 2022,
+  },
+  {
+    company: "NYC DOHMH",
+    name: "Emergency Medical Technician, Basic",
+    year: 2018,
+  },
+];
+
 export const softSkillsDetails = [
-  "Problem-solving",
   "Teamwork",
   "Communication",
+  "Collaboration",
   "Adaptability",
   "Attention to detail",
   "Passionate",
   "Proactive",
-  "Multitasker",
+  "Documentation",
+  "Agile Methodologies",
+  "Troubleshooting",
+  "Multitasking",
+];
+
+export const volunteeringDetails = [
+  {
+    company: "Out In Tech",
+    title: "Digial Corps Software Engineer",
+    content: `Helped organizations around the world including Africa and Central America. Collaborated using WordPress to assist with features for their
+    websites. Tackled many tickets of these organizations in one day!`,
+    year: 2022,
+  },
+  {
+    company: "Out In Tech",
+    title: "Digial Corps Software Engineer",
+    content: `Helped organizations around the world including Africa and Tennessee, US. Collaborated using WordPress to assist with features for their
+    websites. Tackled Feedback Hub besides accessibilities from one of these
+    organizations in one day!`,
+    year: 2023,
+  },
 ];

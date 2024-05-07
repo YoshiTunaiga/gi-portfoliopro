@@ -1,15 +1,19 @@
 import { TOTAL_SCREENS } from "./utilities/commonUtils";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import "./App.css";
 import { useState } from "react";
 import getLPTheme from "./getLPTheme";
+import { useTheme } from "@mui/material/styles";
 import Header from "./components/Header/Header";
-import { Box } from "@mui/material";
+import { Box, Zoom } from "@mui/material";
+import { NavigationSharp } from "@mui/icons-material";
+import ScrollService from "./utilities/ScrollService";
+import "./App.css";
 
 export default function App() {
   const [mode, setMode] = useState("light");
   const LPtheme = createTheme(getLPTheme(mode));
+  const theme = useTheme();
 
   const toggleColorMode = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
@@ -27,11 +31,29 @@ export default function App() {
     );
   };
 
+  const transitionDuration = {
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen,
+  };
+
   return (
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <Header mode={mode} toggleColorMode={toggleColorMode} />
-      <Box sx={{ bgcolor: "background.default" }}>{mapAllScreens()}</Box>
+      <Box>{mapAllScreens()}</Box>
+      <Zoom
+        in={true}
+        timeout={transitionDuration}
+        unmountOnExit
+        style={{
+          transitionDelay: "3000ms",
+        }}>
+        <div
+          className="float-button"
+          onClick={() => ScrollService.scrollHandler.scrollToHome()}>
+          <NavigationSharp className="icon-float" color="secondary.light" />
+        </div>
+      </Zoom>
     </ThemeProvider>
   );
 }

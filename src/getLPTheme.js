@@ -2,8 +2,8 @@ import { alpha } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 export const brand = {
-  50: "#FFFFFF",
-  100: "#CEE5FD",
+  50: "#000000",
+  100: "#FFFFFF",
   200: "#9CCCFC",
   300: "#55A6F6",
   400: "#0A66C2",
@@ -64,9 +64,9 @@ const getDesignTokens = (mode) => ({
   palette: {
     mode,
     primary: {
-      light: brand[200],
-      main: brand[50],
-      dark: brand[800],
+      light: brand[100],
+      main: gold[200],
+      dark: brand[50],
       contrastText: brand[50],
       ...(mode === "dark" && {
         contrastText: brand[100],
@@ -323,15 +323,15 @@ export default function getLPTheme(mode) {
               borderColor: gold[400],
               color: gold[500],
               "&:hover": {
-                borderColor: brand[50],
-                color: brand[50],
+                borderColor: brand[100],
+                color: brand[100],
               },
             }),
             ...(ownerState.variant === "text" && {
               color: gold[500],
               "&:hover": {
-                borderColor: brand[50],
-                color: brand[50],
+                borderColor: brand[100],
+                color: brand[100],
               },
             }),
             ...(theme.palette.mode === "dark" && {
@@ -339,15 +339,15 @@ export default function getLPTheme(mode) {
                 borderColor: gold[700],
                 color: gold[300],
                 "&:hover": {
-                  borderColor: brand[50],
-                  color: brand[50],
+                  borderColor: brand[100],
+                  color: brand[100],
                 },
               }),
               ...(ownerState.variant === "text" && {
                 color: gold[300],
                 "&:hover": {
-                  borderColor: brand[50],
-                  color: brand[50],
+                  borderColor: brand[100],
+                  color: brand[100],
                 },
               }),
             }),
@@ -457,15 +457,18 @@ export default function getLPTheme(mode) {
               bottom: 0,
               left: 0,
               backgroundColor: brand[200],
+              textDecoration: "none",
               opacity: 0.7,
               transition: "width 0.3s ease, opacity 0.3s ease",
             },
             "&:hover::before": {
               width: "100%",
               opacity: 1,
+              textDecoration: "none",
             },
             ...(theme.palette.mode === "dark" && {
               color: brand[200],
+              textDecoration: "none",
             }),
           }),
         },
@@ -559,19 +562,19 @@ export default function getLPTheme(mode) {
       MuiTextField: {
         styleOverrides: {
           root: ({ theme }) => ({
-            color: brand[50],
+            color: brand[100],
             "& label .Mui-focused": {
               color: "#FFFFFF",
             },
             "& .MuiInputBase-input": {
-              color: brand[50],
-              borderColor: brand[50],
+              color: brand[100],
+              borderColor: brand[100],
               boxSizing: "border-box",
               "&::placeholder": {},
             },
             "& .MuiOutlinedInput-input": {
-              color: brand[50],
-              borderColor: brand[50],
+              color: brand[100],
+              borderColor: brand[100],
             },
             "& .MuiOutlinedInput-root": {
               boxSizing: "border-box",
@@ -580,46 +583,46 @@ export default function getLPTheme(mode) {
               height: "100%",
               borderRadius: "10px",
               border: "1px solid",
-              borderColor: brand[50],
-              color: brand[50],
+              borderColor: brand[100],
+              color: brand[100],
               transition: "border-color 120ms ease-in",
               "& fieldset": {
                 border: "none",
                 boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                color: brand[50],
+                color: brand[100],
                 background: `${alpha("#FFFFFF")}`,
               },
-              "&:hover": { color: brand[50], borderColor: brand[50] },
+              "&:hover": { color: brand[100], borderColor: brand[100] },
               "&.Mui-focused": {
-                color: brand[50],
-                borderColor: brand[50],
-                outline: "4px solid",
-                outlineColor: brand[50],
+                color: brand[100],
+                borderColor: brand[100],
+                outline: "1px solid",
+                outlineColor: brand[100],
               },
             },
             ...(theme.palette.mode === "dark" && {
               "& .MuiOutlinedInput-root": {
-                color: brand[50],
+                color: brand[100],
                 boxSizing: "border-box",
                 minWidth: 280,
                 minHeight: 40,
                 height: "100%",
                 borderRadius: "10px",
                 border: "1px solid",
-                borderColor: brand[50],
+                borderColor: brand[100],
                 transition: "border-color 120ms ease-in",
                 "& fieldset": {
-                  color: brand[50],
+                  color: brand[100],
                   border: "none",
                   boxShadow: " 0px 2px 4px rgba(0, 0, 0, 0.4)",
-                  background: `${alpha(brand[50])}`,
+                  background: `${alpha(brand[100])}`,
                 },
-                "&:hover": { color: brand[50], borderColor: brand[50] },
+                "&:hover": { color: brand[100], borderColor: brand[100] },
                 "&.Mui-focused": {
-                  color: brand[50],
-                  borderColor: brand[50],
-                  outline: "4px solid",
-                  outlineColor: alpha(brand[50]),
+                  color: brand[100],
+                  borderColor: brand[100],
+                  outline: "1px solid",
+                  outlineColor: alpha(brand[100]),
                 },
               },
             }),

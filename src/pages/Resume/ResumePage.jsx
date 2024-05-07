@@ -2,8 +2,19 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animation";
-import { Work } from "@mui/icons-material";
+import ProfessionalExperience from "./components/ProfessionalExperience";
+import SoftSkills from "./components/SoftSkills";
+import EducationHistory from "./components/EducationHistory";
+import LicensesAndCertifications from "./components/LicensesAndCertifications";
+import {
+  Work,
+  School,
+  EngineeringSharp,
+  CardMembershipSharp,
+  VolunteerActivismSharp,
+} from "@mui/icons-material";
 import "./ResumePage.css";
+import Volunteering from "./components/Volunteering";
 
 const ResumePage = ({ id = "" }) => {
   /* STATES */
@@ -17,34 +28,6 @@ const ResumePage = ({ id = "" }) => {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const ResumeHeading = ({
-    heading,
-    subHeading,
-    description,
-    fromDate,
-    toDate,
-  }) => {
-    return (
-      <div className="resume-heading">
-        <div className="resume-main-heading">
-          <div className="heading-bullet"></div>
-          <span>{heading ? heading : ""}</span>
-          {fromDate && toDate ? (
-            <div className="heading-date">{fromDate + "-" + toDate}</div>
-          ) : (
-            <div></div>
-          )}
-        </div>
-        <div className="resume-sub-heading">
-          <span>{subHeading ? subHeading : ""}</span>
-        </div>
-        <div className="resume-heading-description">
-          <span>{description ? description : ""}</span>
-        </div>
-      </div>
-    );
-  };
-
   ResumePage.propTypes = {
     heading: PropTypes.string,
     subHeading: PropTypes.string,
@@ -55,98 +38,25 @@ const ResumePage = ({ id = "" }) => {
 
   // /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
-    { label: "Professional Experience", logoSrc: <Work /> },
-    { label: "Education History", logoSrc: <Work /> },
-    { label: "Soft Skills", logoSrc: <Work /> },
-    { label: "Licenses & Certifications", logoSrc: <Work /> },
-    { label: "Volunteering", logoSrc: <Work /> },
-  ];
-
-  const professionalExperienceDetails = [
+    { label: "Professional Experience", logoSrc: <Work fontSize="small" /> },
+    { label: "Education History", logoSrc: <School fontSize="small" /> },
+    { label: "Soft Skills", logoSrc: <EngineeringSharp fontSize="small" /> },
     {
-      company: "Astrana Health (former ApolloMed)",
-      position: "Software Engineer II",
-      content: `An innovative, flexible organization outside of the standardized
-      healthcare system that focuses on bringing stagnant healthcare ambitions
-      to life. They address systemic healthcare issues in collaboration with
-      providers to ensure the best possible care for all patients at a lower
-      cost.`,
+      label: "Licenses & Certifications",
+      logoSrc: <CardMembershipSharp fontSize="small" />,
     },
     {
-      company: "Budget Better (now Much)",
-      position: "Junior Software Developer",
-      content: `Automating the tedious parts of personal
-      finance so you can focus on the money decisions that really matter.`,
+      label: "Volunteering",
+      logoSrc: <VolunteerActivismSharp fontSize="small" />,
     },
-    {
-      company: "Fullstack Academy",
-      position: "Software Engineer Instructional Mentor PT",
-      content: `Immersive, live online bootcamp offerings in Coding, Cybersecurity,
-      Data Analytics, AI & Machine Learning, and more!`,
-    },
-  ];
-
-  const softSkillsDetails = [
-    "Problem-solving",
-    "Teamwork",
-    "Communication",
-    "Adaptability",
-    "Attention to detail",
-    "Passionate",
-    "Proactive",
-    "Multitasker",
   ];
 
   const resumeDetails = [
-    //   /* PROGRAMMING SKILLS */
-    <div
-      key="programming-skills"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-      }}>
-      {professionalExperienceDetails.map((job, index) => (
-        <div
-          key={index}
-          style={{
-            textAlign: "left",
-            fontFamily: "Arial Narrow",
-            fontSize: "18px",
-          }}>
-          <p style={{ padding: 0, marginBottom: 0 }}>{job.company}</p>
-          <p style={{ padding: 0, margin: "2px 0", color: "#868585" }}>
-            {job.position}
-          </p>
-          <div style={{ color: "#868585" }}>
-            <p style={{ padding: 0, marginTop: "6px" }}> {job.content}</p>
-          </div>
-        </div>
-      ))}
-    </div>,
-
-    //   /* Interests */
-    <div className="resume-screen-container" key="interests">
-      <ResumeHeading
-        heading="Sports"
-        description="Apart from being a tech enthusiast , I also love to test my physical resistance by participating in obstacle races like Spartan, RuggedManiac, TD Five Boro Bike Tour and others."
-      />
-      <ResumeHeading
-        heading="Art"
-        description="Depending on the Season, I go deep into Art, such as painting, figure drawing, cross stitching, building puzzles, and others. These are my hobbies. What about yours?"
-      />
-    </div>,
-
-    <div
-      className="resume-screen-container programming-skills-container"
-      key="programming-skills">
-      {softSkillsDetails.map((skill, index) => (
-        <div className="skill-parent1" key={index}>
-          <div className="heading-bullet"></div>
-          <p>{skill}</p>
-        </div>
-      ))}
-    </div>,
+    <ProfessionalExperience key={0} />,
+    <EducationHistory key={1} />,
+    <SoftSkills key={2} />,
+    <LicensesAndCertifications key={3} />,
+    <Volunteering key={4} />,
   ];
 
   const handleCarousal = (index) => {
@@ -163,7 +73,7 @@ const ResumePage = ({ id = "" }) => {
         key={index}>
         {bullet.logoSrc}
         {/* <i className={`${bullet.logoSrc}`} aria-hidden="true"></i> */}
-        <span className="bullet-label"> - {bullet.label}</span>
+        <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
   };
@@ -196,9 +106,9 @@ const ResumePage = ({ id = "" }) => {
         minHeight: "fit-content",
         alignItems: "center",
         gap: 40,
-        backgroundColor: "#000000",
+        backgroundColor: "#FFFFFF",
         textAlign: "center",
-        color: "#FFFFFF",
+        color: "#000000",
         padding: 0,
         margin: 0,
         lineHeight: 1.5,

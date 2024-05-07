@@ -1,9 +1,10 @@
 // import React from 'react'
 import PropTypes from "prop-types";
 import formBgImg from "../../assets/Hike.png";
-import { Button, Grid, OutlinedInput, TextField } from "@mui/material";
+import { Box, Button, Grid, Link, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import styled from "styled-components";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 
 const FormGrid = styled(Grid)(() => ({
   display: "flex",
@@ -18,8 +19,13 @@ const ContactMePage = ({ id = "" }) => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
-        color: "#FFFFFF",
-        backgroundColor: "#302E2E",
+        color: "#000000",
+        background: `linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)), url(${formBgImg})`,
+        backgroundSize: "cover",
+        objectFit: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "cover",
+        backgroundAttachment: "fixed",
         justifyContent: "center",
       }}>
       <div
@@ -35,7 +41,11 @@ const ContactMePage = ({ id = "" }) => {
             justifyContent: "space-evenly",
             textAlign: "center",
           }}>
-          <div>
+          <div
+            style={{
+              width: "30%",
+              alignContent: "center",
+            }}>
             <p
               style={{
                 color: "#C7A03B",
@@ -49,6 +59,7 @@ const ContactMePage = ({ id = "" }) => {
             </p>
             <p
               style={{
+                color: "#FFFFFF",
                 fontFamily: "Arial Narrow",
                 fontSize: "54px",
                 padding: 0,
@@ -57,11 +68,37 @@ const ContactMePage = ({ id = "" }) => {
               }}>
               {`Let's Get In Touch`}
             </p>
+            <div
+              style={{
+                color: "#FFFFFF",
+              }}>
+              <p style={{ textAlign: "center", textWrap: "wrap" }}>
+                Send me a message by filling out the form, I will reach back as
+                soon as possible!
+              </p>
+              <p>We can also connect through:</p>
+            </div>
+            <Box sx={{ color: "primary.light" }}>
+              <Link
+                href="https://www.linkedin.com/in/gisseldiazf/"
+                underline="none"
+                target="_blank"
+                color="white">
+                <LinkedIn fontSize="large" />
+              </Link>
+
+              <Link
+                href="https://github.com/YoshiTunaiga"
+                underline="none"
+                target="_blank"
+                color="white">
+                <GitHub fontSize="large" />
+              </Link>
+            </Box>
           </div>
           <div
             style={{
-              background: `linear-gradient(rgba(0, 0, 0, 60%), rgba(0, 0, 0, 60%)), url(${formBgImg})`,
-              backgroundSize: "cover",
+              background: "rgba(0,0,0, 0.1)",
               boxShadow: "-4px 4px 8px 2px #000000",
               borderRadius: "15px",
               width: "430px",
@@ -74,12 +111,15 @@ const ContactMePage = ({ id = "" }) => {
                 flexDirection: "column",
                 justifyContent: "space-evenly",
                 textAlign: "center",
+                borderRadius: 10,
                 border: "1px solid yellow",
-                padding: "10px",
+                height: "390px",
+                padding: "20px",
                 gap: 8,
               }}>
               <p
                 style={{
+                  color: "#FFFFFF",
                   fontFamily: "Times New Roman",
                   fontSize: "54px",
                   padding: 0,
@@ -98,7 +138,7 @@ const ContactMePage = ({ id = "" }) => {
                   method="POST"
                   style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   <Grid item>
-                    <OutlinedInput
+                    <TextField
                       fullWidth
                       id="customer-name"
                       name="customerName"
@@ -110,7 +150,7 @@ const ContactMePage = ({ id = "" }) => {
                     />
                   </Grid>
                   <Grid item>
-                    <OutlinedInput
+                    <TextField
                       fullWidth
                       id="customer-email"
                       name="customerEmail"
@@ -121,7 +161,6 @@ const ContactMePage = ({ id = "" }) => {
                     />
                   </Grid>
                   <FormGrid item>
-                    <p>MESSAGE:</p>
                     <TextField
                       fullWidth
                       id="customer-message"
@@ -155,12 +194,13 @@ const ContactMePage = ({ id = "" }) => {
       </div>
       <div
         style={{
+          color: "#FFFFFF",
           height: "40px",
           borderTop: "1px solid #C7A03B",
           textAlign: "center",
           alignContent: "center",
         }}>
-        @ CopyRight Gi Diaz Solutions
+        Copyright © 2024 Gi Diaz Solutions. All rights reserved
       </div>
     </div>
   );

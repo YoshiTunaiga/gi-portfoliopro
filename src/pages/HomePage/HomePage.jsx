@@ -1,73 +1,47 @@
 import PropTypes from "prop-types";
 import { Button, Divider } from "@mui/material";
-import { StyledHomeOpacityContainer, StyledMainBoxParent } from "./style";
+import {
+  StyledHomeOpacityContainer,
+  StyledMainBoxParent,
+  StyledHomeContentWrapper,
+  StyleNameHeader,
+  StyledTitleHeader,
+  StyledHomeText,
+  StyledButtonsContainer,
+} from "./style";
+import ScrollService from "../../utilities/ScrollService";
 
 const HomePage = ({ id = "" }) => {
   return (
     <StyledMainBoxParent id={id}>
       <StyledHomeOpacityContainer>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: 8,
-            margin: "200px",
-            textAlign: "center",
-          }}>
-          <p
-            style={{
-              fontFamily: "Arial Black",
-              fontSize: "120px",
-              padding: 0,
-              margin: 0,
-              lineHeight: 1,
-            }}>
-            Gi
-          </p>
-          <p
-            style={{
-              fontFamily: "Times New Roman",
-              fontWeight: "bold",
-              fontSize: "24px",
-              padding: 0,
-              margin: 0,
-            }}>
-            FULL STACK SOFTWARE ENGINEER
-          </p>
+        <StyledHomeContentWrapper>
+          <StyleNameHeader>Gi</StyleNameHeader>
+          <StyledTitleHeader>FULL STACK SOFTWARE ENGINEER</StyledTitleHeader>
           <Divider />
           <div style={{ textAlign: "center" }}>
-            <p
-              style={{
-                fontFamily: "Times New Roman",
-                fontSize: "24px",
-                padding: 0,
-                margin: 0,
-              }}>
+            <StyledHomeText>
               Full Stack Software Engineer | Innovating Healthcare Solutions for
               Better Patient Outcomes
-            </p>
-            <p
-              style={{
-                fontFamily: "Times New Roman",
-                fontSize: "24px",
-                padding: 0,
-                margin: 0,
-              }}>
+            </StyledHomeText>
+            <StyledHomeText>
               Prevention Navigation, Scalable Web Applications, Agile
               Development, JavaScript
-            </p>
+            </StyledHomeText>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-            }}>
-            <Button variant="outlined">CONTACT ME</Button>
-            <Button variant="outlined">RESUME</Button>
-          </div>
-        </div>
+          <StyledButtonsContainer>
+            <Button
+              variant="outlined"
+              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
+              CONTACT ME
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={() => ScrollService.scrollHandler.scrollToResume()}>
+              RESUME
+            </Button>
+          </StyledButtonsContainer>
+        </StyledHomeContentWrapper>
       </StyledHomeOpacityContainer>
     </StyledMainBoxParent>
   );

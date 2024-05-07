@@ -25,6 +25,13 @@ export default class ScrollService {
     contactMeScreen.scrollIntoView({ behavior: "smooth" });
   };
 
+  scrollToResume = () => {
+    let resumeScreen = document.getElementById("Resume");
+    if (!resumeScreen) return;
+
+    resumeScreen.scrollIntoView({ behavior: "smooth" });
+  };
+
   // /* SCROLL BACK TO HOME */
   scrollToHome = () => {
     let homeScreen = document.getElementById("Home");
