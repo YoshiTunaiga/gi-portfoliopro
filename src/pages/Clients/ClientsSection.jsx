@@ -26,7 +26,8 @@ const ClientsSection = () => {
         <Card
           key={idx}
           sx={{
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            borderColor: "rgba(255,255,255,0.4)",
+            backgroundColor: "rgba(255, 255, 255, 0.4)",
             height: "200px",
             width: "250px",
             alignContent: "center",
@@ -84,7 +85,7 @@ const ClientsSection = () => {
       </p>
       <p
         style={{
-          color: "#000000",
+          color: "#FFFFFF",
           fontFamily: "Times New Roman",
           fontSize: "24px",
           padding: 0,

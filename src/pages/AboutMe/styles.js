@@ -7,8 +7,7 @@ export const StyledAboutMeContainer = styled.div`
   color: #000000;
   background-color: #ffffff;
   justify-content: space-evenly;
-  gap: 100;
-  padding: 100px 15px 0px 160px;
+  padding: 100px 0px 0px 50px;
 
   @media only screen and (max-device-width: 480px) {
     flex-direction: column;
@@ -27,7 +26,7 @@ export const StyledAboutMeContainer = styled.div`
 
 export const StyledImageContainer = styled.div`
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 80px;
 
   @media (max-width: 440px) {
     display: none;

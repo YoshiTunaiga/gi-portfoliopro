@@ -50,7 +50,12 @@ const AboutMePage = ({ id = "" }) => {
         </div>
       </StyledTextContainer>
       <StyledImageContainer>
-        <img src={aboutMeImg} alt="aboutme" width={454} />
+        <img
+          src={aboutMeImg}
+          alt="aboutMe"
+          width={454}
+          style={{ paddingTop: 7 }}
+        />
       </StyledImageContainer>
     </StyledAboutMeContainer>
   );

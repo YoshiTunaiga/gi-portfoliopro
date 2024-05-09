@@ -6,11 +6,11 @@ export const StyledClientsContainer = styled.div`
   flex-direction: column;
   min-height: 100vh;
   color: #OOOOOO;
-  /* background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
+  background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
     url(${myPicture});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: cover;
-  background-attachment: fixed; */
+  background-attachment: fixed;
   /* object-fit: cover, */
 `;

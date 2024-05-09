@@ -87,7 +87,7 @@ const TestimonialsPage = ({ id = "" }) => {
           display: "flex",
           flexDirection: "column",
           gap: 30,
-          margin: "100px",
+          margin: "80px 100px",
         }}>
         <TestimonialsSection testimonialsArray={testimonialsArray} />
       </div>

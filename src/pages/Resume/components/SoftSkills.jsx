@@ -10,10 +10,9 @@ const SoftSkills = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: "auto auto auto",
-          padding: 2,
         }}>
         {softSkillsDetails.map((skill, index) => (
-          <ListItem key={index} sx={{ padding: 2 }}>
+          <ListItem key={index} sx={{ padding: 1 }}>
             <ListItemIcon sx={{ color: "#c7a03b" }}>
               <StarPurple500Sharp />
             </ListItemIcon>
