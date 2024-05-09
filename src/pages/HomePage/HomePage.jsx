@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Button, Divider } from "@mui/material";
+import ScrollService from "../../utilities/ScrollService";
 import {
   StyledHomeOpacityContainer,
   StyledMainBoxParent,
@@ -9,9 +10,14 @@ import {
   StyledHomeText,
   StyledButtonsContainer,
 } from "./style";
-import ScrollService from "../../utilities/ScrollService";
 
 const HomePage = ({ id = "" }) => {
+  const handleScrollToContact = () =>
+    ScrollService.scrollHandler.scrollToContact();
+
+  const handleScrollToResume = () =>
+    ScrollService.scrollHandler.scrollToResume();
+
   return (
     <StyledMainBoxParent id={id}>
       <StyledHomeOpacityContainer>
@@ -30,14 +36,10 @@ const HomePage = ({ id = "" }) => {
             </StyledHomeText>
           </div>
           <StyledButtonsContainer>
-            <Button
-              variant="outlined"
-              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
+            <Button variant="outlined" onClick={handleScrollToContact}>
               CONTACT ME
             </Button>
-            <Button
-              variant="outlined"
-              onClick={() => ScrollService.scrollHandler.scrollToResume()}>
+            <Button variant="outlined" onClick={handleScrollToResume}>
               RESUME
             </Button>
           </StyledButtonsContainer>

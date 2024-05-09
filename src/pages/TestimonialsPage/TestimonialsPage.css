@@ -1,0 +1,12 @@
+.container {
+  width: 17rem;
+  height: 15rem;
+}
+
+.text-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

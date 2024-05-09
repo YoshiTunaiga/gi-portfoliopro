@@ -2,7 +2,8 @@ import AboutMePage from "../pages/AboutMe/AboutMePage";
 import ClientsPage from "../pages/Clients/ClientsPage";
 import ContactMePage from "../pages/ContactMe/ContactMePage";
 import HomePage from "../pages/HomePage/HomePage";
-// import ResumePage from "../pages/Resume/ResumePage";
+import ResumePage from "../pages/Resume/ResumePage";
+import TestimonialsPage from "../pages/TestimonialsPage/TestimonialsPage";
 
 // Component Rendering: Screens for SPA
 export const TOTAL_SCREENS = [
@@ -18,10 +19,14 @@ export const TOTAL_SCREENS = [
     screen_name: "Clients",
     component: ClientsPage,
   },
-  // {
-  //   screen_name: "Resume",
-  //   component: ResumePage,
-  // },
+  {
+    screen_name: "Testimonials",
+    component: TestimonialsPage,
+  },
+  {
+    screen_name: "Resume",
+    component: ResumePage,
+  },
   {
     screen_name: "Contact",
     component: ContactMePage,
@@ -30,7 +35,6 @@ export const TOTAL_SCREENS = [
 
 // titration to get the available screens index
 export const GET_SCREEN_INDEX = (screen_name) => {
-  // console.log(screen_name);
   // If the screen name doesn't exist, return -1 (not such screen on the array)
   if (!screen_name) return -1;
 

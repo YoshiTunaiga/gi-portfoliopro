@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-// import PropTypes from 'prop-types'
 import {
   Box,
   AppBar,
   Toolbar,
   Button,
   Container,
-  Divider,
   Typography,
   MenuItem,
   Drawer,
@@ -15,6 +12,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "../../utilities/commonUtils";
 import ScrollService from "../../utilities/ScrollService";
+import { StyledHeaderBox } from "./styles";
 
 const Header = () => {
   const drawerWidth = window.innerWidth / 2;
@@ -59,7 +57,8 @@ const Header = () => {
           style={{
             fontFamily: "Lato",
             fontSize: "24px",
-            color: "#FFFFFF",
+            fontWeight: "bold",
+            color: "#C7A03B",
           }}>
           {Screen.screen_name}
         </Typography>
@@ -113,27 +112,19 @@ const Header = () => {
         <Container style={{ minWidth: "100%" }}>
           <Toolbar
             variant="regular"
-            sx={(theme) => ({
+            sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               maxHeight: 40,
               borderColor: "divider",
-            })}>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: "flex",
-                justifyContent: "space-between",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                color: "#FFFFFF",
-              }}>
+            }}>
+            <StyledHeaderBox>
               <h2>Gi Diaz Solutions</h2>
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {getHeaderOptions()}
               </Box>
-            </Box>
+            </StyledHeaderBox>
             <Box sx={{ display: { sm: "", md: "none" } }}>
               <Button
                 variant="text"
@@ -157,7 +148,6 @@ const Header = () => {
                 }}>
                 <Box
                   sx={{
-                    // minWidth: "60dvw",
                     p: 2,
                     backgroundColor: "background.paper",
                     flexGrow: 1,

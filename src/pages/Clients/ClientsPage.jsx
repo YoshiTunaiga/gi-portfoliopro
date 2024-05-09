@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import ClientsSection from "./ClientsSection";
-import TestimonialsSection from "./TestimonialsSection";
+// import TestimonialsSection from "./TestimonialsSection";
 import { StyledClientsContainer } from "./styles";
 
 const ClientsPage = ({ id = "" }) => {
@@ -14,7 +14,7 @@ const ClientsPage = ({ id = "" }) => {
           margin: "100px",
         }}>
         <ClientsSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
       </div>
     </StyledClientsContainer>
   );

@@ -18,7 +18,7 @@ export default class ScrollService {
 
   //   /* SCROLL TO HIRE ME / CONTACT SCREEN */
   // Action function for when the "Hire Me" button its clicked
-  scrollToHireMe = () => {
+  scrollToContact = () => {
     let contactMeScreen = document.getElementById("Contact");
     if (!contactMeScreen) return;
 

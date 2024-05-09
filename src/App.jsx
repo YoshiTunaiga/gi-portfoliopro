@@ -5,10 +5,12 @@ import { useState } from "react";
 import getLPTheme from "./getLPTheme";
 import { useTheme } from "@mui/material/styles";
 import Header from "./components/Header/Header";
-import { Box, Zoom } from "@mui/material";
+import { Zoom } from "@mui/material";
 import { NavigationSharp } from "@mui/icons-material";
 import ScrollService from "./utilities/ScrollService";
+import { StyledAppBox } from "./AppStyles";
 import "./App.css";
+import "./index.css";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -36,21 +38,19 @@ export default function App() {
     exit: theme.transitions.duration.leavingScreen,
   };
 
+  const handleScrollButton = () => ScrollService.scrollHandler.scrollToHome();
+
   return (
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <Header mode={mode} toggleColorMode={toggleColorMode} />
-      <Box>{mapAllScreens()}</Box>
+      <StyledAppBox>{mapAllScreens()}</StyledAppBox>
       <Zoom
         in={true}
         timeout={transitionDuration}
         unmountOnExit
-        style={{
-          transitionDelay: "3000ms",
-        }}>
-        <div
-          className="float-button"
-          onClick={() => ScrollService.scrollHandler.scrollToHome()}>
+        style={{ transitionDelay: "3000ms" }}>
+        <div className="float-button" onClick={handleScrollButton}>
           <NavigationSharp className="icon-float" color="secondary.light" />
         </div>
       </Zoom>

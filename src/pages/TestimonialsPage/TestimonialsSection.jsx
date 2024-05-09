@@ -1,62 +1,44 @@
+import PropTypes from "prop-types";
 import { Box, Card, Stack } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
-import DCLogo from "../../assets/DCLogo.png";
-import FSALogo from "../../assets/FSALogo.jpeg";
-import AstranaLogo from "../../assets/AstranaLogo.png";
-import mftsLogo from "../../assets/mftsLogo.png";
-import muchLogo from "../../assets/muchLogo.png";
-// import { red } from "@mui/material/colors";
+import "./TestimonialsPage.css";
 
-// import PropTypes from "prop-types";
-
-const ClientsSection = () => {
+const TestimonialsSection = ({ testimonialsArray }) => {
   const [cards, setCards] = useState([]);
-  const cardsPerPage = 4;
-  const containerWidth = cardsPerPage * 220;
-  const images = [
-    { title: "FSALogo", img: FSALogo },
-    { title: "muchLogo", img: muchLogo },
-    { title: "AstranaLogo", img: AstranaLogo },
-    { title: "mftsLogo", img: mftsLogo },
-    { title: "DCLogo", img: DCLogo },
-  ];
+  const cardsPerPage = 3;
+  const containerWidth = cardsPerPage * 350;
+
   const duplicateCards = useMemo(
     () =>
-      images.map((item, idx) => (
+      testimonialsArray.map((item, idx) => (
         <Card
           key={idx}
           sx={{
             backgroundColor: "rgba(255, 255, 255, 0.5)",
-            height: "200px",
-            width: "250px",
+            height: "180px",
+            width: "320px",
             alignContent: "center",
             padding: 2,
             boxShadow: `2px 2px 15px 2px rgba(0,0,0,0.25), -2px -2px 15px 2px rgba(0,0,0,0.22)`,
           }}>
-          <Stack>
-            <img
-              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </Stack>
+          <div className="container" style={{ height: "150px" }}>
+            <p
+              className="text-3"
+              style={{
+                color: "#000000",
+                fontSize: "14px",
+                fontFamily: "Lato",
+                fontStyle: "italic",
+                lineHeight: "18.5px",
+              }}>
+              {`${item.content}`}
+            </p>
+          </div>
         </Card>
       )),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
-
-  // const handleNextPage = () => {
-  //   setSlideDirection("right");
-  //   setCurrentPage((prevPage) => prevPage + 1);
-  // };
-
-  // const handlePrevPage = () => {
-  //   setSlideDirection("left");
-  //   setCurrentPage((prevPage) => prevPage - 1);
-  // };
-
   useEffect(() => {
     setCards(duplicateCards);
   }, [duplicateCards]);
@@ -68,9 +50,13 @@ const ClientsSection = () => {
         flexDirection: "column",
         gap: 1,
         textAlign: "center",
+        color: "#C7A03B",
+        fontFamily: "Times New Roman",
+        fontSize: "34px",
         padding: 0,
         margin: 0,
         lineHeight: 1,
+        // border: "1px solid olive",
       }}>
       <p
         style={{
@@ -80,7 +66,7 @@ const ClientsSection = () => {
           padding: 0,
           margin: 0,
         }}>
-        CLIENTS
+        TESTIMONIALS
       </p>
       <p
         style={{
@@ -90,7 +76,7 @@ const ClientsSection = () => {
           padding: 0,
           margin: 0,
         }}>
-        See some of the companies I have worked with
+        Feedback from former colleagues, clients, and supervisors{" "}
       </p>
       <Box
         sx={{
@@ -99,8 +85,9 @@ const ClientsSection = () => {
           alignItems: "center",
           alignContent: "center",
           justifyContent: "center",
+          height: "200px",
           width: "100%",
-          marginTop: "40px",
+          marginTop: "20px",
         }}>
         <Box
           sx={{
@@ -139,6 +126,8 @@ const ClientsSection = () => {
   );
 };
 
-ClientsSection.propTypes = {};
+TestimonialsSection.propTypes = {
+  testimonialsArray: PropTypes.array,
+};
 
-export default ClientsSection;
+export default TestimonialsSection;

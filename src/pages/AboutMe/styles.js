@@ -12,7 +12,7 @@ export const StyledAboutMeContainer = styled.div`
 
   @media only screen and (max-device-width: 480px) {
     flex-direction: column;
-    padding: 100px 50px 50px 50px;
+    padding: 100px 50px 50px 30px;
     max-width: 440px;
   }
 
@@ -43,9 +43,10 @@ export const StyledTextContainer = styled.div`
   flex-direction: column;
   text-align: center;
 
-  /* @media (max-width: 440px) {
-    display: none;
-  } */
+  @media only screen and (max-device-width: 480px) {
+    inline-size: 300px;
+    overflow-wrap: break-word;
+  }
 `;
 
 export const StyledHeaderContainer = styled.div``;
@@ -55,7 +56,7 @@ export const StyledPrimaryHeader = styled.p`
   margin: 0;
   color: #c7a03b;
   font-family: "Times New Roman";
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1;
 `;
 
@@ -64,6 +65,6 @@ export const StyledSecondaryHeader = styled.p`
   margin: 0;
   /* color: #c7a03b; */
   font-family: "Arial Narrow";
-  font-size: 54px;
+  font-size: 44px;
   line-height: 1;
 `;

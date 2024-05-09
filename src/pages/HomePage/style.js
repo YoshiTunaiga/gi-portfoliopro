@@ -12,13 +12,13 @@ export const StyledMainBoxParent = styled(Box)`
   background-size: 100%;
   /* object-fit: cover; */
 
-  @media (max-width: 440px) {
+  @media only screen and (max-device-width: 480px) {
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
   }
 
-  @media (max-width: 1024px) {
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
     /* min-height: 960px; */
   }
 `;
@@ -38,9 +38,13 @@ export const StyledHomeContentWrapper = styled.div`
   margin: 200px;
   text-align: center;
 
-  @media (max-width: 440px) {
-    margin: 100px 20px 50px 50px;
-    width: 70%;
+  @media only screen and (min-device-width: 360px) and (max-device-width: 480px) {
+    margin: 100px 20px 50px 20px;
+    width: 25%;
+  }
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    /* min-height: 960px; */
   }
 `;
 
@@ -52,6 +56,7 @@ export const StyleNameHeader = styled.p`
   line-height: 1;
 
   @media (max-width: 440px) {
+    font-family: "Arial Black";
     font-size: 120px;
   }
 `;
