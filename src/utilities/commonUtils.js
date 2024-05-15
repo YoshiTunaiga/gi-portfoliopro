@@ -26,6 +26,7 @@ export const TOTAL_SCREENS = [
   // {
   //   screen_name: "Resume",
   //   component: ResumePage,
+  //
   // },
   {
     screen_name: "Contact",

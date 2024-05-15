@@ -5,7 +5,7 @@ import { useState } from "react";
 import getLPTheme from "./getLPTheme";
 import { useTheme } from "@mui/material/styles";
 import Header from "./components/Header/Header";
-import { Zoom } from "@mui/material";
+import { Box, Toolbar, Zoom } from "@mui/material";
 import { NavigationSharp } from "@mui/icons-material";
 import ScrollService from "./utilities/ScrollService";
 import { StyledAppBox } from "./AppStyles";
@@ -42,18 +42,25 @@ export default function App() {
 
   return (
     <ThemeProvider theme={LPtheme}>
-      <CssBaseline />
-      <Header mode={mode} toggleColorMode={toggleColorMode} />
-      <StyledAppBox>{mapAllScreens()}</StyledAppBox>
-      <Zoom
-        in={true}
-        timeout={transitionDuration}
-        unmountOnExit
-        style={{ transitionDelay: "3000ms" }}>
-        <div className="float-button" onClick={handleScrollButton}>
-          <NavigationSharp className="icon-float" color="secondary.light" />
-        </div>
-      </Zoom>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Header mode={mode} toggleColorMode={toggleColorMode} />
+        <Box
+          component="main"
+          sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
+          <Toolbar />
+          <StyledAppBox>{mapAllScreens()}</StyledAppBox>
+          <Zoom
+            in={true}
+            timeout={transitionDuration}
+            unmountOnExit
+            style={{ transitionDelay: "3000ms" }}>
+            <div className="float-button" onClick={handleScrollButton}>
+              <NavigationSharp className="icon-float" color="secondary.light" />
+            </div>
+          </Zoom>
+        </Box>
+      </Box>
     </ThemeProvider>
   );
 }

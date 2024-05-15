@@ -629,6 +629,30 @@ export default function getLPTheme(mode) {
           }),
         },
       },
+      MuiListItemText: {
+        styleOverrides: {
+          root: () => ({
+            color: gold[200],
+            "& .MuiTypography-root": {
+              color: gold[200],
+              fontSize: "18px",
+              fontWeight: "bold",
+            },
+          }),
+        },
+      },
+      MuiListItemIcon: {
+        styleOverrides: {
+          root: () => ({
+            color: gold[200],
+            "& .MuiTypography-root": {
+              color: gold[200],
+              fontSize: "18px",
+              fontWeight: "bold",
+            },
+          }),
+        },
+      },
     },
   };
 }

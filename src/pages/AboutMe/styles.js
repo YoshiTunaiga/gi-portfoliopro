@@ -7,7 +7,7 @@ export const StyledAboutMeContainer = styled.div`
   color: #000000;
   background-color: #ffffff;
   justify-content: space-evenly;
-  padding: 100px 0px 0px 50px;
+  padding: 100px 0px 0px 100px;
 
   @media only screen and (max-device-width: 480px) {
     flex-direction: column;
