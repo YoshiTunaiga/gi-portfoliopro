@@ -41,6 +41,7 @@ export const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  max-width: 800px;
 
   @media only screen and (max-device-width: 480px) {
     inline-size: 300px;
@@ -55,7 +56,7 @@ export const StyledPrimaryHeader = styled.p`
   margin: 0;
   color: #c7a03b;
   font-family: "Times New Roman";
-  font-size: 24px;
+  font-size: 124px;
   line-height: 1;
 `;
 

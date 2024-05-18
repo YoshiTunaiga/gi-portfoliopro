@@ -72,7 +72,7 @@ export default class ScrollService {
     if (!event || Object.keys(event).length < 1) return;
 
     for (let screen of TOTAL_SCREENS) {
-      let screenFromDOM = document.getElementById(screen.screen_name);
+      let screenFromDOM = document.getElementById(screen.screenName);
       if (!screenFromDOM) continue;
 
       let fullyVisible = this.isElementInView(screenFromDOM, "complete");
@@ -82,7 +82,7 @@ export default class ScrollService {
         if (partiallyVisible && !screen.alreadyRendered) {
           //BROADCAST FADE IN EFFECT
           ScrollService.currentScreenFadeIn.next({
-            fadeInScreen: screen.screen_name,
+            fadeInScreen: screen.screenName,
           });
           screen["alreadyRendered"] = true;
           break;
@@ -91,7 +91,7 @@ export default class ScrollService {
         if (fullyVisible) {
           // BROADCAST SCREEN NAME
           ScrollService.currentScreenBroadcaster.next({
-            screenInView: screen.screen_name,
+            screenInView: screen.screenName,
           });
           break;
         }

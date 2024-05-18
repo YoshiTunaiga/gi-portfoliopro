@@ -4,13 +4,15 @@ import { Box } from "@mui/material";
 
 export const StyledMainBoxParent = styled(Box)`
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
+  background-color: #100842;
+  color: #ffffff;
+  /* background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
     url(${landingPageImg});
   background-repeat: no-repeat;
   background-position: cover;
   background-attachment: fixed;
-  background-size: 100%;
-  /* object-fit: cover; */
+  background-size: 100%; */ /* object-fit: cover; */
+  /* border: 1px solid red; */
 
   @media only screen and (max-device-width: 480px) {
     background-position: center center;
@@ -26,17 +28,23 @@ export const StyledMainBoxParent = styled(Box)`
 export const StyledHomeOpacityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  color: #ffffff;
+  margin: 0;
 `;
 
 export const StyledHomeContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 35% auto 25%;
+  /* grid-template-rows: 1fr; */
+  grid-gap: 35px;
   justify-content: center;
-  gap: 8;
-  margin: 200px;
+  align-items: center;
+  margin: 20px 0 0 0;
+  /* margin: 200px; */
   text-align: center;
+  /* border: 1px solid red; */
+  /* border: 1px solid white; */
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 480px) {
     margin: 100px 20px 50px 20px;
@@ -54,6 +62,7 @@ export const StyleNameHeader = styled.p`
   padding: 0;
   margin: 0;
   line-height: 1;
+  width: 60%;
 
   @media (max-width: 440px) {
     font-family: "Arial Black";
@@ -75,7 +84,7 @@ export const StyledTitleHeader = styled.p`
 
 export const StyledHomeText = styled.p`
   font-family: "Times New Roman";
-  font-size: 24px;
+  font-size: 20px;
   padding: 0;
   margin: 0;
 
@@ -89,11 +98,12 @@ export const StyledButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 10px;
 
   @media (max-width: 440px) {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     gap: 10px;
   }
 `;

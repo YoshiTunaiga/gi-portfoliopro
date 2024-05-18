@@ -5,6 +5,7 @@ import FSALogo from "../../assets/FSALogo.jpeg";
 import AstranaLogo from "../../assets/AstranaLogo.png";
 import mftsLogo from "../../assets/mftsLogo.png";
 import muchLogo from "../../assets/muchLogo.png";
+import NBHBP from "../../assets/NBHBP.png";
 // import { red } from "@mui/material/colors";
 
 // import PropTypes from "prop-types";
@@ -12,13 +13,14 @@ import muchLogo from "../../assets/muchLogo.png";
 const ClientsSection = () => {
   const [cards, setCards] = useState([]);
   const cardsPerPage = 4;
-  const containerWidth = cardsPerPage * 220;
+  const containerWidth = cardsPerPage * 300;
   const images = [
     { title: "FSALogo", img: FSALogo },
     { title: "muchLogo", img: muchLogo },
     { title: "AstranaLogo", img: AstranaLogo },
     { title: "mftsLogo", img: mftsLogo },
     { title: "DCLogo", img: DCLogo },
+    { title: "NBHBP", img: NBHBP },
   ];
   const duplicateCards = useMemo(
     () =>
@@ -27,9 +29,9 @@ const ClientsSection = () => {
           key={idx}
           sx={{
             borderColor: "rgba(255,255,255,0.4)",
-            backgroundColor: "rgba(255, 255, 255, 0.4)",
-            height: "200px",
-            width: "250px",
+            backgroundColor: "rgba(255, 255, 255, 1)",
+            height: "180px",
+            width: "220px",
             alignContent: "center",
             padding: 2,
             boxShadow: `2px 2px 15px 2px rgba(0,0,0,0.25), -2px -2px 15px 2px rgba(0,0,0,0.22)`,
@@ -40,6 +42,7 @@ const ClientsSection = () => {
               src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
+              style={{ backgroundColor: "white", height: "auto" }}
             />
           </Stack>
         </Card>
@@ -47,16 +50,6 @@ const ClientsSection = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
-
-  // const handleNextPage = () => {
-  //   setSlideDirection("right");
-  //   setCurrentPage((prevPage) => prevPage + 1);
-  // };
-
-  // const handlePrevPage = () => {
-  //   setSlideDirection("left");
-  //   setCurrentPage((prevPage) => prevPage - 1);
-  // };
 
   useEffect(() => {
     setCards(duplicateCards);
@@ -68,7 +61,7 @@ const ClientsSection = () => {
         display: "flex",
         flexDirection: "column",
         gap: 1,
-        textAlign: "center",
+        // textAlign: "center",
         padding: 0,
         margin: 0,
         lineHeight: 1,
@@ -77,41 +70,43 @@ const ClientsSection = () => {
         style={{
           color: "#C7A03B",
           fontFamily: "Times New Roman",
-          fontSize: "34px",
+          fontSize: "124px",
           padding: 0,
           margin: 0,
+          textAlign: "left",
         }}>
-        CLIENTS
+        MY CLIENTS
       </p>
-      <p
+      <div
         style={{
+          display: "flex",
+          minWidth: "500px",
           color: "#FFFFFF",
           fontFamily: "Times New Roman",
           fontSize: "24px",
-          padding: 0,
+          padding: 20,
           margin: 0,
+          borderLeft: "1px solid #FFFFFF",
         }}>
-        See some of the companies I have worked with
-      </p>
+        See some of the companies I have worked with.
+      </div>
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
-          alignItems: "center",
           alignContent: "center",
-          justifyContent: "center",
-          width: "100%",
-          marginTop: "40px",
+          minWidth: "100%",
+          marginTop: "18px",
         }}>
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "1fr 2fr 1fr",
+            gridTemplateColumns: "1fr 1fr 1fr 1fr",
             gridTemplateRows: "1fr",
             gridGap: "10px",
-            margin: "10px",
+            marginTop: "10px",
             justifyContent: "space-around",
-            width: `${containerWidth}px`,
+            minWidth: `${containerWidth}px`,
             height: "100%",
           }}>
           {cards.map((card, index) => (

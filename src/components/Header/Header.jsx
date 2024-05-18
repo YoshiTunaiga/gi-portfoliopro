@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import {
   AppBar,
   Toolbar,
-  Typography,
+  // Typography,
   Drawer,
   IconButton,
   List,
@@ -39,7 +39,8 @@ export const StyledPermanentDrawer = styled(Drawer, {
 })(({ theme, open }) => ({
   "& .MuiDrawer-paper": {
     backgroundColor: "#FFFFFF",
-    color: "#C7A03B",
+    opacity: 0.8,
+    color: "primary.main",
     whiteSpace: "nowrap",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
@@ -81,7 +82,7 @@ const Header = () => {
     ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const switchScreen = (screen) => {
-    let screenComponent = document.getElementById(screen.screen_name);
+    let screenComponent = document.getElementById(screen.screenName);
     if (!screenComponent) return;
 
     screenComponent.scrollIntoView({ behavior: "smooth" });
@@ -112,18 +113,20 @@ const Header = () => {
             }}>
             <MenuIcon />
           </IconButton>
-          <Typography
-            component="h1"
-            variant="h4"
+          {/* <Typography
             color="white"
             noWrap
-            sx={{ flexGrow: 1 }}>
+            sx={{
+              flexGrow: 1,
+              fontSize: 26,
+              lineHeight: "100%",
+            }}>
             Gi Diaz Solutions
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </StyledAppBar>
       <StyledPermanentDrawer
-        variant="permanent"
+        variant={isDrawerOpen ? "permanent" : "temporary"}
         open={isDrawerOpen}
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
@@ -136,73 +139,13 @@ const Header = () => {
             px: [1],
           }}>
           <IconButton onClick={toggleDrawer}>
-            <ChevronLeft />
+            <ChevronLeft sx={{ color: "primary.main" }} />
           </IconButton>
         </Toolbar>
         <List component="nav">
           <DrawerListItems switchScreen={switchScreen} />
-          {/* {getDrawerOptions()} */}
-          {/* <Divider sx={{ my: 1 }} />
-            {secondaryListItems} */}
         </List>
       </StyledPermanentDrawer>
-      {/* <AppBar
-        position="fixed"
-        sx={{
-          boxShadow: 0,
-          bgcolor: "transparent",
-          backgroundImage: "none",
-        }}>
-        <Container style={{ minWidth: "100%" }}>
-          <Toolbar
-            variant="regular"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              maxHeight: 40,
-              borderColor: "divider",
-            }}>
-            <StyledHeaderBox>
-              <h2>Gi Diaz Solutions</h2>
-              <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                {getHeaderOptions()}
-              </Box>
-            </StyledHeaderBox>
-            <Box sx={{ display: { sm: "", md: "none" } }}>
-              <Button
-                variant="text"
-                color="primary"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-                sx={{ minWidth: "30px", p: "4px" }}>
-                <MenuIcon />
-              </Button>
-              <Drawer
-                anchor="right"
-                open={isDrawerOpen}
-                onClose={toggleDrawer(!isDrawerOpen)}
-                sx={{
-                  width: drawerWidth,
-                  flexShrink: 0,
-                  "& .MuiDrawer-paper": {
-                    width: drawerWidth,
-                    boxSizing: "border-box",
-                  },
-                }}>
-                <Box
-                  sx={{
-                    p: 2,
-                    backgroundColor: "background.paper",
-                    flexGrow: 1,
-                  }}>
-                  {getDrawerOptions()}
-                </Box>
-              </Drawer>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar> */}
     </>
   );
 };

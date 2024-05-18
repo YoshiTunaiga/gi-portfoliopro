@@ -8,41 +8,41 @@ import TestimonialsPage from "../pages/TestimonialsPage/TestimonialsPage";
 // Component Rendering: Screens for SPA
 export const TOTAL_SCREENS = [
   {
-    screen_name: "Home",
+    screenName: "Home",
     component: HomePage,
   },
   {
-    screen_name: "About",
+    screenName: "About",
     component: AboutMePage,
   },
   {
-    screen_name: "Clients",
+    screenName: "Clients",
     component: ClientsPage,
   },
   {
-    screen_name: "Testimonials",
+    screenName: "Testimonials",
     component: TestimonialsPage,
   },
   // {
-  //   screen_name: "Resume",
+  //   screenName: "Resume",
   //   component: ResumePage,
   //
   // },
   {
-    screen_name: "Contact",
+    screenName: "Contact",
     component: ContactMePage,
   },
 ];
 
 // titration to get the available screens index
-export const GET_SCREEN_INDEX = (screen_name) => {
+export const GET_SCREEN_INDEX = (screenName) => {
   // If the screen name doesn't exist, return -1 (not such screen on the array)
-  if (!screen_name) return -1;
+  if (!screenName) return -1;
 
   // Loop thru the array of screens
   for (let idx = 0; idx < TOTAL_SCREENS.length; idx++) {
     // if the screen does exist, return the screen
-    if (TOTAL_SCREENS[idx].screen_name === screen_name) return idx;
+    if (TOTAL_SCREENS[idx].screenName === screenName) return idx;
   }
 
   return -1; // else return -1.

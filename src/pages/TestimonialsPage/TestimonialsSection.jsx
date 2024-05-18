@@ -70,7 +70,7 @@ const TestimonialsSection = ({ testimonialsArray }) => {
       </p>
       <p
         style={{
-          color: "#000000",
+          color: "#100842",
           fontFamily: "Times New Roman",
           fontSize: "24px",
           padding: 0,

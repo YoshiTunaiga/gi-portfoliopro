@@ -3,10 +3,10 @@ export default class Animations {
   static animations = new Animations(); // instantiating an animation class.
 
   // Function to take the screen Id
-  fadeInScreen = (screen_name) => {
-    let screen = document.getElementById(screen_name); // Get the element by its ID.
+  fadeInScreen = (screenName) => {
+    let screen = document.getElementById(screenName); // Get the element by its ID.
 
-    if (!screen_name || !screen) return; // if the screen doesnt exist, return;
+    if (!screenName || !screen) return; // if the screen doesnt exist, return;
 
     // if screen does exist, lets give it a style to transform
     screen.style.opacity = "5";

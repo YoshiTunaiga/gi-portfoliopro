@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import aboutMeImg from "../../assets/profile3.png";
+// import aboutMeImg from "../../assets/profile3.png";
 import {
   StyledAboutMeContainer,
-  StyledImageContainer,
+  // StyledImageContainer,
   StyledPrimaryHeader,
   StyledSecondaryHeader,
   StyledTextContainer,
@@ -49,14 +49,14 @@ const AboutMePage = ({ id = "" }) => {
           </p>
         </div>
       </StyledTextContainer>
-      <StyledImageContainer>
+      {/* <StyledImageContainer>
         <img
           src={aboutMeImg}
           alt="aboutMe"
           width={454}
           style={{ paddingTop: 7 }}
         />
-      </StyledImageContainer>
+      </StyledImageContainer> */}
     </StyledAboutMeContainer>
   );
 };

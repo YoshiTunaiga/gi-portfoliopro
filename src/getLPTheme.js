@@ -54,7 +54,7 @@ export const green = {
 };
 
 export const gold = {
-  200: "#C7A03B",
+  200: "#100842 ",
   400: "#C7A03B",
   500: "#C7A03B",
   700: "#C7A03B",

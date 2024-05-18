@@ -25,9 +25,9 @@ export default function App() {
     return TOTAL_SCREENS.map((screen) =>
       screen.component ? (
         <screen.component
-          screenName={screen.screen_name}
-          key={screen.screen_name}
-          id={screen.screen_name}
+          screenName={screen.screenName}
+          key={screen.screenName}
+          id={screen.screenName}
         />
       ) : null
     );
@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={LPtheme}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", bgcolor: "#100842" }}>
         <CssBaseline />
         <Header mode={mode} toggleColorMode={toggleColorMode} />
         <Box
