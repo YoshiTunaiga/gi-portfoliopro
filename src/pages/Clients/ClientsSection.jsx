@@ -69,7 +69,6 @@ const ClientsSection = () => {
       <p
         style={{
           color: "#C7A03B",
-          fontFamily: "Times New Roman",
           fontSize: "124px",
           padding: 0,
           margin: 0,
@@ -82,7 +81,6 @@ const ClientsSection = () => {
           display: "flex",
           minWidth: "500px",
           color: "#FFFFFF",
-          fontFamily: "Times New Roman",
           fontSize: "24px",
           padding: 20,
           margin: 0,

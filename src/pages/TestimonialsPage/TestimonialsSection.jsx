@@ -27,7 +27,6 @@ const TestimonialsSection = ({ testimonialsArray }) => {
               style={{
                 color: "#000000",
                 fontSize: "14px",
-                fontFamily: "Lato",
                 fontStyle: "italic",
                 lineHeight: "18.5px",
               }}>
@@ -51,7 +50,6 @@ const TestimonialsSection = ({ testimonialsArray }) => {
         gap: 1,
         textAlign: "center",
         color: "#C7A03B",
-        fontFamily: "Times New Roman",
         fontSize: "34px",
         padding: 0,
         margin: 0,
@@ -61,7 +59,6 @@ const TestimonialsSection = ({ testimonialsArray }) => {
       <p
         style={{
           color: "#C7A03B",
-          fontFamily: "Times New Roman",
           fontSize: "34px",
           padding: 0,
           margin: 0,
@@ -71,7 +68,6 @@ const TestimonialsSection = ({ testimonialsArray }) => {
       <p
         style={{
           color: "#100842",
-          fontFamily: "Times New Roman",
           fontSize: "24px",
           padding: 0,
           margin: 0,

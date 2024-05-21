@@ -4,13 +4,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { useState } from "react";
 import getLPTheme from "./getLPTheme";
 import { useTheme } from "@mui/material/styles";
-import Header from "./components/Header/Header";
+import Header from "./Header";
 import { Box, Toolbar, Zoom } from "@mui/material";
 import { NavigationSharp } from "@mui/icons-material";
 import ScrollService from "./utilities/ScrollService";
-import { StyledAppBox } from "./AppStyles";
-import "./App.css";
-import "./index.css";
+import { StyledAppBox } from "./styles/AppStyles";
+
+import "./styles/App.css";
+import "./styles/index.css";
+import "./styles/modern-style.css";
+import "./styles/utils.css";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -40,26 +43,34 @@ export default function App() {
 
   const handleScrollButton = () => ScrollService.scrollHandler.scrollToHome();
 
+  const PortfolioBody = (
+    <Box
+      component="main"
+      sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
+      <Toolbar />
+      <StyledAppBox>{mapAllScreens()}</StyledAppBox>
+      <Zoom
+        in={true}
+        timeout={transitionDuration}
+        unmountOnExit
+        style={{ transitionDelay: "3000ms" }}>
+        <div className="float-button" onClick={handleScrollButton}>
+          <NavigationSharp className="icon-float" color="secondary.light" />
+        </div>
+      </Zoom>
+    </Box>
+  );
+
   return (
     <ThemeProvider theme={LPtheme}>
-      <Box sx={{ display: "flex", bgcolor: "#100842" }}>
+      <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <Header mode={mode} toggleColorMode={toggleColorMode} />
-        <Box
-          component="main"
-          sx={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
-          <Toolbar />
-          <StyledAppBox>{mapAllScreens()}</StyledAppBox>
-          <Zoom
-            in={true}
-            timeout={transitionDuration}
-            unmountOnExit
-            style={{ transitionDelay: "3000ms" }}>
-            <div className="float-button" onClick={handleScrollButton}>
-              <NavigationSharp className="icon-float" color="secondary.light" />
-            </div>
-          </Zoom>
-        </Box>
+        <Header
+          component={PortfolioBody}
+          mode={mode}
+          toggleColorMode={toggleColorMode}
+        />
+        {/* <Header mode={mode} toggleColorMode={toggleColorMode} /> */}
       </Box>
     </ThemeProvider>
   );

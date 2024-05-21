@@ -68,7 +68,6 @@ const ContactMePage = ({ id = "" }) => {
           <p
             style={{
               color: "#C7A03B",
-              fontFamily: "Times New Roman",
               fontSize: "34px",
               padding: 0,
               margin: 0,
@@ -79,7 +78,6 @@ const ContactMePage = ({ id = "" }) => {
           <p
             style={{
               color: "#FFFFFF",
-              fontFamily: "Arial Narrow",
               fontSize: "54px",
               padding: 0,
               margin: 0,
@@ -146,7 +144,6 @@ const ContactMePage = ({ id = "" }) => {
             <p
               style={{
                 color: "#FFFFFF",
-                fontFamily: "Times New Roman",
                 fontSize: "54px",
                 padding: 0,
                 margin: 0,

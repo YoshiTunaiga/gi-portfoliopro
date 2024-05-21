@@ -1,18 +1,11 @@
+import { Container } from "@mui/material";
 import styled from "styled-components";
-import landingPageImg from "../../assets/emt.jpg";
-import { Box } from "@mui/material";
 
-export const StyledMainBoxParent = styled(Box)`
+export const StyledMainBoxParent = styled(Container)`
   min-height: 100vh;
-  background-color: #100842;
+  background-color: rgb(15 23 42);
   color: #ffffff;
-  /* background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
-    url(${landingPageImg});
-  background-repeat: no-repeat;
-  background-position: cover;
-  background-attachment: fixed;
-  background-size: 100%; */ /* object-fit: cover; */
-  /* border: 1px solid red; */
+  margin-top: 20px;
 
   @media only screen and (max-device-width: 480px) {
     background-position: center center;
@@ -32,19 +25,12 @@ export const StyledHomeOpacityContainer = styled.div`
 `;
 
 export const StyledHomeContentWrapper = styled.div`
-  /* display: flex;
-  flex-direction: row; */
-  display: grid;
-  grid-template-columns: 35% auto 25%;
-  /* grid-template-rows: 1fr; */
-  grid-gap: 35px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px 0 0 0;
-  /* margin: 200px; */
+  margin: 40px 0 0 0;
   text-align: center;
-  /* border: 1px solid red; */
-  /* border: 1px solid white; */
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 480px) {
     margin: 100px 20px 50px 20px;
@@ -58,11 +44,11 @@ export const StyledHomeContentWrapper = styled.div`
 
 export const StyleNameHeader = styled.p`
   font-family: "Arial Black";
-  font-size: 120px;
+  font-size: 70px;
   padding: 0;
   margin: 0;
   line-height: 1;
-  width: 60%;
+  width: 80%;
 
   @media (max-width: 440px) {
     font-family: "Arial Black";

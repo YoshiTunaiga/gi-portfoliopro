@@ -15,7 +15,6 @@ const ProfessionalExperience = () => {
           key={index}
           style={{
             textAlign: "left",
-            fontFamily: "Arial Narrow",
             fontSize: "18px",
           }}>
           <p style={{ padding: 0, marginBottom: 0 }}>{job.company}</p>

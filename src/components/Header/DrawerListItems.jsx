@@ -46,7 +46,6 @@ const DrawerListItems = ({ switchScreen }) => {
           <ListItemIcon>
             <LinkedIn />
           </ListItemIcon>
-          <ListItemText primary={"LinkedIn"} />
         </Link>
       </ListItemButton>
       <ListItemButton key={"GitHub"} onClick={() => switchScreen(Screen)}>
@@ -59,7 +58,6 @@ const DrawerListItems = ({ switchScreen }) => {
           <ListItemIcon>
             <GitHub />
           </ListItemIcon>
-          <ListItemText primary={"GitHub"} />
         </Link>
       </ListItemButton>
     </React.Fragment>

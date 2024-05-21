@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Button } from "@mui/material";
-import aboutMeImg from "../../assets/profile3.png";
+import aboutMeImg from "../../assets/profile.png";
 import ScrollService from "../../utilities/ScrollService";
 import {
   StyledHomeOpacityContainer,
@@ -11,6 +11,9 @@ import {
   StyledHomeText,
   StyledButtonsContainer,
 } from "./style";
+import "../../styles/index.css";
+import "./../../styles/modern-style.css";
+import "./../../styles/utils.css";
 
 const HomePage = ({ id = "" }) => {
   const handleScrollToContact = () =>
@@ -23,15 +26,6 @@ const HomePage = ({ id = "" }) => {
     <StyledMainBoxParent id={id}>
       <StyledHomeOpacityContainer>
         <StyledHomeContentWrapper>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}>
-            <StyledTitleHeader>FULL STACK SOFTWARE ENGINEER</StyledTitleHeader>
-            <StyleNameHeader>Gi Diaz</StyleNameHeader>
-          </div>
           {/* ====== HOME IMAGE ======  */}
           <div
             style={{
@@ -40,20 +34,30 @@ const HomePage = ({ id = "" }) => {
               zIndex: 1,
               borderRight: "1px solid white",
               borderBottom: "1px solid white",
-              borderRadius: "10%",
+              borderRadius: "40%",
             }}>
             <img
               src={aboutMeImg}
               alt="aboutMe"
-              width={350}
+              width={160}
               style={{
                 padding: 0,
-                margin: 10,
+                margin: 0,
                 border: "1px solid white",
-                borderRadius: "10%",
+                borderRadius: "40%",
               }}
             />
           </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}>
+            <StyledTitleHeader>{`Hola, I'm Gi Diaz`}</StyledTitleHeader>
+            <StyleNameHeader>FULL STACK SOFTWARE ENGINEER</StyleNameHeader>
+          </div>
+
           <div
             style={{
               // borderLeft: "1px solid white",
@@ -78,14 +82,7 @@ const HomePage = ({ id = "" }) => {
             </StyledButtonsContainer>
           </div>
         </StyledHomeContentWrapper>
-        <div
-          style={{
-            minHeight: "28vh",
-            backgroundColor: "#090429",
-            padding: 20,
-            zIndex: 1,
-            // border: "1px solid white",
-          }}>
+        <div>
           <div
             style={{
               display: "flex",
@@ -95,15 +92,19 @@ const HomePage = ({ id = "" }) => {
               textAlign: "center",
             }}>
             <div>
-              <p>Location</p>
+              <p className="greyHeading">Location</p>
               <p>Kissimmee, FL</p>
             </div>
             <div>
-              <p>Experience</p>
+              <p className="greyHeading">Tech Experience</p>
               <p>2+ Years</p>
             </div>
             <div>
-              <p>Language</p>
+              <p className="greyHeading">Customer Services</p>
+              <p>12+ Years</p>
+            </div>
+            <div>
+              <p className="greyHeading">Language</p>
               <p>Billingual</p>
             </div>
           </div>

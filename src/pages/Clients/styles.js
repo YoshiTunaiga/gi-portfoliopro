@@ -6,7 +6,7 @@ export const StyledClientsContainer = styled.div`
   flex-direction: column;
   min-height: 100vh;
   color: #ffffff;
-  background-color: #100842;
+  /* background-color: #100842; */
   /* background: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)),
     url(${myPicture});
   background-size: cover;

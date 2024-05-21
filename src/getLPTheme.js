@@ -54,10 +54,12 @@ export const green = {
 };
 
 export const gold = {
-  200: "#100842 ",
-  400: "#C7A03B",
-  500: "#C7A03B",
-  700: "#C7A03B",
+  100: "#070a13",
+  200: "#070a13 ",
+  400: "#070a13",
+  500: "#070a13",
+  700: "#070a13",
+  900: "#070a13",
 };
 
 const getDesignTokens = (mode) => ({
@@ -129,7 +131,7 @@ const getDesignTokens = (mode) => ({
       ...(mode === "dark" && { default: gray[900], paper: gray[800] }),
     },
     text: {
-      primary: gray[800],
+      primary: brand[100],
       secondary: gray[600],
       ...(mode === "dark" && { primary: "#fff", secondary: gray[400] }),
     },
@@ -141,7 +143,7 @@ const getDesignTokens = (mode) => ({
     },
   },
   typography: {
-    fontFamily: ['"Inter", "sans-serif"'].join(","),
+    fontFamily: ['"General Sans", "sans-serif"'].join(","),
     h1: {
       fontSize: 60,
       fontWeight: 600,
@@ -273,6 +275,17 @@ export default function getLPTheme(mode) {
           }),
         },
       },
+      MuiBox: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            backgroundImage: "none",
+            backgroundColor: gold[100],
+            ...(theme.palette.mode === "dark" && {
+              backgroundColor: alpha(gold[900], 0.6),
+            }),
+          }),
+        },
+      },
       MuiButtonBase: {
         defaultProps: {
           disableTouchRipple: true,
@@ -281,9 +294,9 @@ export default function getLPTheme(mode) {
         styleOverrides: {
           root: {
             boxSizing: "border-box",
-            transition: "all 100ms ease-in",
+            // transition: "all 100ms ease-in",
             "&:focus-visible": {
-              outline: `3px solid ${alpha(brand[500], 0.5)}`,
+              outline: `3px solid ${brand[100]}`,
               outlineOffset: "2px",
             },
           },
@@ -292,10 +305,18 @@ export default function getLPTheme(mode) {
       MuiButton: {
         styleOverrides: {
           root: ({ theme, ownerState }) => ({
+            display: "inline-block",
+            fontWeight: 600,
+            textDecoration: "none",
+            letterSpacing: "-0.05em",
+            backgroundColor: "var(--clr-rose)",
+            color: "#f1f5f9",
+            padding: "0.5em 1em",
+            borderRadius: "8px",
             boxSizing: "border-box",
-            boxShadow: "none",
-            borderRadius: "20px",
-            padding: "11px 24px",
+            boxShadow:
+              "0 2px 20px rgba(199, 160, 59, 0.5), 0 2px 6px rgba(199, 160, 59, 0.5), 0 0 100px -10px var(--clr-rose)",
+            transition: "transform 0.3s, box-shadow 0.3s",
             textTransform: "none",
             "&:active": {
               transform: "scale(0.98)",
@@ -432,9 +453,9 @@ export default function getLPTheme(mode) {
       MuiDivider: {
         styleOverrides: {
           root: ({ theme }) => ({
-            borderColor: `${alpha(gold[200], 0.8)}`,
+            borderColor: `${alpha(brand[100], 0.8)}`,
             ...(theme.palette.mode === "dark" && {
-              borderColor: `${alpha(gold[700], 0.4)}`,
+              borderColor: `${alpha(brand[700], 0.4)}`,
             }),
           }),
         },
@@ -489,9 +510,9 @@ export default function getLPTheme(mode) {
         styleOverrides: {
           root: ({ theme }) => ({
             backgroundImage: "none",
-            backgroundColor: gray[100],
+            backgroundColor: gold[100],
             ...(theme.palette.mode === "dark" && {
-              backgroundColor: alpha(gray[900], 0.6),
+              backgroundColor: alpha(gold[900], 0.6),
             }),
           }),
         },
@@ -629,12 +650,26 @@ export default function getLPTheme(mode) {
           }),
         },
       },
+      MuiListItemButton: {
+        styleOverrides: {
+          root: () => ({
+            padding: "2px 11px",
+            color: brand[100],
+            "& .MuiTypography-root": {
+              color: brand[100],
+              fontSize: "18px",
+              fontWeight: "bold",
+            },
+          }),
+        },
+      },
       MuiListItemText: {
         styleOverrides: {
           root: () => ({
-            color: gold[200],
+            padding: "2px 2px",
+            color: brand[100],
             "& .MuiTypography-root": {
-              color: gold[200],
+              color: brand[100],
               fontSize: "18px",
               fontWeight: "bold",
             },
@@ -644,9 +679,23 @@ export default function getLPTheme(mode) {
       MuiListItemIcon: {
         styleOverrides: {
           root: () => ({
-            color: gold[200],
+            padding: "2px 8px",
+            minWidth: "20px",
+            color: brand[100],
             "& .MuiTypography-root": {
-              color: gold[200],
+              color: brand[100],
+              fontSize: "18px",
+              fontWeight: "bold",
+            },
+          }),
+        },
+      },
+      MuiTypography: {
+        styleOverrides: {
+          root: () => ({
+            color: brand[100],
+            "& .MuiTypography-root": {
+              color: brand[100],
               fontSize: "18px",
               fontWeight: "bold",
             },
