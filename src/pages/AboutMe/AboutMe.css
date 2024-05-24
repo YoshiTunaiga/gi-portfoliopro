@@ -53,10 +53,6 @@
   margin-left: 0.5em;
 }
 
-.about__img-wrapper {
-  box-shadow: 0 0 20px 2px var(--clr-light);
-}
-
 /* xs */
 @media (min-width: 475px) {
   .about {
@@ -146,11 +142,14 @@
   }
 
   .about__img {
-    width: 26rem;
+    /* min-width: 26rem; */
+    /* box-shadow: 0 0 20px 2px var(--clr-light); */
   }
 
   .about__img-wrapper {
-    margin: 0 10%;
+    /* max-width: 1; */
+    /* align-self: center; */
+    /* margin: 0 5%; */
   }
 }
 

@@ -19,8 +19,8 @@ const AboutMePage = ({ id = "" }) => {
   return (
     <StyledAboutMeContainer
       id={id}
-      className=" container section"
-      sx={{ py: { xs: 4, sm: 12 } }}>
+      className="container section"
+      sx={{ py: { xs: 4, sm: 10 }, my: { xs: "10px 10px", sm: "0 auto" } }}>
       <StyledTextContainer>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <StyledHeaderContainer>
@@ -57,10 +57,10 @@ const AboutMePage = ({ id = "" }) => {
             </p>
           </div>
         </div>
-        {/* ====== ABOUT IMAGE ======= */}
         <div className="about__img-wrapper">
           <img className="about__img" src={aboutMeImg} alt="aboutMe" />
         </div>
+        {/* ====== ABOUT IMAGE ======= */}
       </StyledTextContainer>
       <Divider />
       <div>
@@ -68,7 +68,8 @@ const AboutMePage = ({ id = "" }) => {
         <List
           sx={{
             display: "flex",
-            flexWrap: { xs: "wrap", sm: "nowrap" },
+            flexWrap: { xs: "wrap", sm: "wrap" },
+            gap: 2,
             py: { xs: 1, sm: 3 },
           }}>
           {techAndTools.map((tool) => (

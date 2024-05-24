@@ -8,6 +8,7 @@ import {
   StyledContactSectionWrapper,
   FormGrid,
 } from "./styles";
+import "../../styles/index.css";
 
 const ContactMePage = ({ id = "" }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -101,12 +102,13 @@ const ContactMePage = ({ id = "" }) => {
               display: "flex",
               justifyContent: "center",
               gap: 3,
+              padding: 2,
             }}>
             <Link
               href="https://www.linkedin.com/in/gisseldiazf/"
               underline="none"
               target="_blank"
-              color="white">
+              color="var(--clr-rose)">
               <LinkedIn fontSize="large" />
             </Link>
 
@@ -114,7 +116,7 @@ const ContactMePage = ({ id = "" }) => {
               href="https://github.com/YoshiTunaiga"
               underline="none"
               target="_blank"
-              color="white">
+              color="var(--clr-rose)">
               <GitHub fontSize="large" />
             </Link>
           </Box>

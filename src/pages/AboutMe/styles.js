@@ -3,10 +3,11 @@ import "../../styles/index.css";
 import { Container } from "@mui/material";
 
 export const StyledAboutMeContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-height: 100vh;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* gap: 1rem; */
+  /* min-height: 100vh; */
+  /* border: 1px solid olive; */
 `;
 
 export const StyledImageContainer = styled.div`
@@ -17,8 +18,11 @@ export const StyledImageContainer = styled.div`
 export const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* max-width: 100%; */
+  margin: 0;
+  /* align-items: center; */
   gap: 1rem;
+  /* border: 1px solid red; */
 `;
 
 export const StyledHeaderContainer = styled.div``;

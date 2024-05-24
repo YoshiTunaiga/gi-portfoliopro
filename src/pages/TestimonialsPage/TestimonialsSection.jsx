@@ -21,7 +21,7 @@ const TestimonialsSection = ({ testimonialsArray }) => {
             padding: 2,
             boxShadow: `2px 2px 15px 2px rgba(0,0,0,0.25), -2px -2px 15px 2px rgba(0,0,0,0.22)`,
           }}>
-          <div className="container" style={{ height: "150px" }}>
+          <div className="testimonial-container" style={{ height: "150px" }}>
             <p
               className="text-3"
               style={{
@@ -72,7 +72,11 @@ const TestimonialsSection = ({ testimonialsArray }) => {
           padding: 0,
           margin: 0,
         }}>
-        Feedback from former colleagues, clients, and supervisors{" "}
+        Feedback from former colleagues and clients. See more{" "}
+        <a href="https://www.linkedin.com/in/gisseldiazf/#:~:text=Recommendations,Recommendations">
+          here
+        </a>
+        .{" "}
       </p>
       <Box
         sx={{

@@ -15,37 +15,46 @@ const ClientsSection = () => {
   const cardsPerPage = 4;
   const containerWidth = cardsPerPage * 300;
   const images = [
-    { title: "FSALogo", img: FSALogo },
-    { title: "muchLogo", img: muchLogo },
-    { title: "AstranaLogo", img: AstranaLogo },
+    {
+      title: "FSALogo",
+      img: FSALogo,
+      pageUrl: "https://www.fullstackacademy.com/",
+    },
+    { title: "muchLogo", img: muchLogo, pageUrl: "https://www.usemuch.com/" },
+    {
+      title: "AstranaLogo",
+      img: AstranaLogo,
+      pageUrl: "https://www.astranahealth.com/",
+    },
     { title: "mftsLogo", img: mftsLogo },
     { title: "DCLogo", img: DCLogo },
-    { title: "NBHBP", img: NBHBP },
+    { title: "NBHBP", img: NBHBP, pageUrl: "https://www.newbeginninghbp.com/" },
   ];
   const duplicateCards = useMemo(
     () =>
       images.map((item, idx) => (
-        <Card
-          key={idx}
-          sx={{
-            borderColor: "rgba(255,255,255,0.4)",
-            backgroundColor: "rgba(255, 255, 255, 1)",
-            height: "180px",
-            width: "220px",
-            alignContent: "center",
-            padding: 2,
-            boxShadow: `2px 2px 15px 2px rgba(0,0,0,0.25), -2px -2px 15px 2px rgba(0,0,0,0.22)`,
-          }}>
-          <Stack>
-            <img
-              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-              style={{ backgroundColor: "white", height: "auto" }}
-            />
-          </Stack>
-        </Card>
+        <a key={idx} href={item.pageUrl} target="_blank">
+          <Card
+            sx={{
+              borderColor: "rgba(255,255,255,0.4)",
+              backgroundColor: "rgba(255, 255, 255, 1)",
+              height: "180px",
+              width: "220px",
+              alignContent: "center",
+              padding: 2,
+              boxShadow: `2px 2px 15px 2px rgba(0,0,0,0.25), -2px -2px 15px 2px rgba(0,0,0,0.22)`,
+            }}>
+            <Stack>
+              <img
+                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                alt={item.title}
+                loading="lazy"
+                style={{ backgroundColor: "white", height: "auto" }}
+              />
+            </Stack>
+          </Card>
+        </a>
       )),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
